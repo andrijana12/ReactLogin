@@ -1,14 +1,15 @@
- import firebase from "firebase";
- 
+import firebase from "firebase";
 
- var firebaseConfig = {
-    apiKey: "AIzaSyCKwYn581EyT_3JgFrPNc9Cw6Xf44VJquo",
-    authDomain: "login-fc900.firebaseapp.com",
-    projectId: "login-fc900",
-    storageBucket: "login-fc900.appspot.com",
-    messagingSenderId: "729717463034",
-    appId: "1:729717463034:web:2bdd1739c7143d0cba3643"
-  };
-  // Initialize Firebase
- const fire= firebase.initializeApp(firebaseConfig);
- export default fire;
+var firebaseConfig = {
+apiKey: "AIzaSyCH5OBzDuCzjp14JTZB1AF7NQ4dd6Xd5tI",
+authDomain: "login-1de5e.firebaseapp.com",
+projectId: "login-1de5e",
+storageBucket: "login-1de5e.appspot.com",
+messagingSenderId: "64143606525",
+appId: "1:64143606525:web:75408253c4d53e26b1f494"
+};
+
+const fire = firebase.initializeApp(firebaseConfig);
+
+export default fire;
+

@@ -1,41 +1,44 @@
 import React from "react";
 
-const Login=(props)=>{
-    const{email,setEmail,password,setPassword,handleLogin,handleSignUp,hasAccount,setHasAccount,emailError,passwordError}=props;
+const Login = (props) => {
+    const { email, setEmail, password, setPassword, handleLogin, handleSignUp,
+         hasAccount, setHasAccount, emailError, passwordError, loginWithGoogle } = props;
 
-    return(
-        
+    return (
+
         <selection className="login">
-        <div className="loginContainer">
-            <label>UserName</label>
-            <input type="text" autoFocus required value ={email}
-            onChange={e=> setEmail (e.target.value)} />
-            <p className="errorMsg">{emailError}</p>
-            <label>Password</label>
-            <input type="password" required value={password}
-            onChange={(e)=> setPassword(e.target.value)}/>
-           <p className="errorMsg">{passwordError}</p>
+            <div className="loginContainer">
+                <label>UserName</label>
+                <input type="text" autoFocus required value={email}
+                    onChange={e => setEmail(e.target.value)} />
+                <p className="errorMsg">{emailError}</p>
+                <label>Password</label>
+                <input type="password" required value={password}
+                    onChange={(e) => setPassword(e.target.value)} />
+                <p className="errorMsg">{passwordError}</p>
 
-           <div className="btnContainer">
-               {hasAccount? (<> 
-                <button onClick={handleLogin}>Sign in</button>
-               <p>Don't have an account <span  onClick={()=>setHasAccount(!hasAccount)}>Sign up</span>
-               </p>
+                <div className="btnContainer">
+                    {hasAccount ? (<>
+                        <button onClick={handleLogin}>Sign in</button>
 
-               </>) : (<>
-               <button onClick={handleSignUp}>Sing up</button>
-               <p>Have an account? <span onClick={()=>setHasAccount(!hasAccount)}>Sign in</span></p>
-               </>
-               
-               )}
+                        <p>Don't have an account <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span>
+                        </p>
+
+                    </>) : (<>
+                        <button onClick={handleSignUp}>Sign up</button>
+                        <button onClick={loginWithGoogle}>Sign in with Google</button>
+                        <p>Have an account? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></p>
+                    </>
+
+                    )}
 
 
-        </div>
+                </div>
 
-        </div>
+            </div>
 
         </selection>
     )
 
 }
-export default  Login;
+export default Login;
